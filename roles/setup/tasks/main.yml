@@ -1,0 +1,4 @@
+- name: Create user 'manager' with sudo privileges
+  user:
+    name: manager
+    group: wheel
