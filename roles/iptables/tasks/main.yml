@@ -1,0 +1,21 @@
+- firewalld:
+    port: 21/tcp
+    permanent: true
+    state: enabled
+
+- firewalld:
+    port: 22/tcp
+    permanent: true
+    state: enabled
+
+- firewalld:
+    port: 53/tcp
+    permanent: true
+    state: enabled
+
+- firewalld:
+    port: 123/tcp
+    permanent: true
+    state: enabled
+
+

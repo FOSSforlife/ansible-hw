@@ -1,0 +1,24 @@
+- name: Install mtr
+  package:
+    name: mtr
+    state: latest
+  tags: packages
+
+- name: Install tcpdump
+  package:
+    name: tcpdump
+    state: latest
+  tags: packages
+
+- name:	Install nano
+  package:     
+    name: nano
+    state: latest
+  tags:	packages
+
+- name:	Install cowsay
+  package:     
+    name: cowsay
+    state: latest
+  tags:	packages
+
