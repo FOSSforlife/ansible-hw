@@ -1,4 +1,18 @@
-- name: Create user 'manager' with sudo privileges
+- name: Create user 'manager' with sudo privileges (CentOS)
   user:
     name: manager
     group: wheel
+  when: ansible_os_family == "RedHat"
+
+- name: Create user 'manager' with sudo privileges (Debian)
+  user:
+    name: manager
+    group: sudo
+  when: ansible_os_family == "Debian"
+
+- name: Transfer ssh key for 'manager' to server's authorized key
+  authorized_key:
+    user: manager
+    state: present
+    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDsgEFBYaGp1awCTskBGCB7wILtnXkPvQrrYMTvG5bBQttdC6qSL9JTo4/f8LnvNcHtrO0afqYYNmYFmF21YvFDa/vBRBvw0suLNozvFcQN+fkHJRxWULstIYfU0V7hyWSsUjcZsP7bWm8PJbzagjPo9ZqiyQbUAOOPzC02OYFUClS+CHRu0y0E05aLGSM3j6Ps9mcDyrdcVb37UsbCzyx21D8qnbqAaIjvxsGoERfb6jGAkz8HqLmeESsIufm8qv9M8XyA8ToFSNnh8zZIUWHerbvIFcGH3vL+Z88gZonJGhuv+11tzny7Eyfq0E9/1FhhnPGXRoG1ekmCajOXEFc/ root@localhost.localdomain
+
