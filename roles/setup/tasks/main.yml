@@ -22,5 +22,5 @@
 - name: Set DNS servers
   nmcli:
     conn_name: conn1
-    dns4: 10.0.5.1
+    dns4: 10.0.5.1, 209.244.0.3
     state: present
