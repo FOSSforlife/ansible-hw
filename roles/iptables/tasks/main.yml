@@ -18,4 +18,7 @@
     permanent: true
     state: enabled
 
-
+- firewalld:
+    port: 53/udp
+    permanent: true
+    state: enabled
