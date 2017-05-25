@@ -16,9 +16,17 @@
     state: latest
   tags:	packages
 
-- name:	Install cowsay
-  package:     
-    name: cowsay
+# Added these so that the DNS servers could be added
+- name: Install NetworkManager (Debian)
+  package:
+    name: network-manager
     state: latest
-  tags:	packages
+  tags: packages
+  when: ansible_os_family == "Debian"
 
+- name: Install NetworkManager (CentOS)
+  package:
+    name: NetworkManager-glib
+    state: latest
+  tags: packages
+  when: ansible_os_family == "RedHat"

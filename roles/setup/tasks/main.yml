@@ -18,3 +18,9 @@
 
 - name: Install packages
   include: packages.yml
+
+- name: Set DNS servers
+  nmcli:
+    conn_name: conn1
+    dns4: 10.0.5.1
+    state: present
