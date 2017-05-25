@@ -1,0 +1,9 @@
+- firewalld:
+    port: 80/tcp
+    permanent: true
+    state: enabled
+    
+- firewalld:
+    port: 443/tcp
+    permanent: true
+    state: enabled
