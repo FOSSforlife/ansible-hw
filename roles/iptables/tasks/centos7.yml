@@ -1,0 +1,14 @@
+- firewalld:
+    port: 25/tcp
+    permanent: true
+    state: enabled
+    
+- firewalld:
+    port: 110/tcp
+    permanent: true
+    state: enabled
+    
+- firewalld:
+    port: 143/tcp
+    permanent: true
+    state: enabled
